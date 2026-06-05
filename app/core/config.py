@@ -7,7 +7,9 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int
     LOG_LEVEL: str = "INFO"
     model_config = SettingsConfigDict(
-        env_file=".env"
+        env_file="app/.env"
     )
+    REDIS_HOST: str
+    REDIS_PORT: int
 
 settings = Settings() # type: ignore

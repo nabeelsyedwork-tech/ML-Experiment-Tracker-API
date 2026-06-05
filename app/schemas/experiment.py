@@ -11,3 +11,5 @@ class ExperimentOut(BaseModel):
     projectid: int
     params: dict
     metrics: dict
+    class Config:
+        from_attributes = True
