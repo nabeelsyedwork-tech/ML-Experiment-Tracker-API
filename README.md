@@ -303,6 +303,25 @@ REDIS_PORT=6379
 
 LOG_LEVEL=INFO
 ```
+---
+
+### Environment Configuration
+
+When running locally:
+
+```env
+REDIS_HOST=localhost
+REDIS_PORT=6379
+```
+
+When running with Docker Compose:
+
+```env
+REDIS_HOST=redis
+REDIS_PORT=6379
+```
+
+The hostname `redis` is automatically provided by Docker Compose and allows the FastAPI container to communicate with the Redis container over the Docker network.
 
 ---
 
