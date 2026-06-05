@@ -310,17 +310,22 @@ LOG_LEVEL=INFO
 
 ### Local Development
 
+Start Redis:
+
 ```bash
-pip install -r requirements.txt
-uvicorn app.main:app --reload
+redis-server
 ```
 
----
-
-### Docker Deployment
+Install dependencies:
 
 ```bash
-docker compose up --build
+pip install -r requirements.txt
+```
+
+Run the FastAPI application:
+
+```bash
+uvicorn app.main:app --reload
 ```
 
 API Documentation:
@@ -329,6 +334,28 @@ API Documentation:
 http://localhost:8000/docs
 ```
 
+---
+
+### Docker Deployment
+
+Run the complete application stack:
+
+```bash
+docker compose up --build
+```
+
+This starts:
+
+* FastAPI Application
+* Redis Cache
+* Docker Network
+* Persistent Redis Volume
+
+API Documentation:
+
+```text
+http://localhost:8000/docs
+```
 ---
 
 ## Key Takeaways
